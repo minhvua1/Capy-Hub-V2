@@ -30,6 +30,11 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab5 = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
 
 --Sections
 
@@ -50,6 +55,9 @@ local Section = Tab4:AddSection({
 	Name = "Bee Swarm Scripts"
 })
 
+local Section = Tab5:AddSection({
+	Name = "Settings"
+})
 
 --Buttons Tab1
 
@@ -149,5 +157,31 @@ Tab2:AddTextbox({
 	end	  
 })
 
+--Buttons Tab3
+
+Tab3:AddButton({
+	Name = "HoHo Hub (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "W Azure",
+	Callback = function()
+      		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+  	end    
+})
+
+--Buttons Tab5
+
+Tab:AddBind({
+	Name = "Phím Để Ẩn",
+	Default = Enum.KeyCode.K,
+	Hold = false,
+	Callback = function()
+		print("press")
+	end    
+})
 
 OrionLib:Init()
