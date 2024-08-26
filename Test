@@ -1,6 +1,6 @@
-local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/WRUyYTdY')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Capy Hub V2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Capy Hub TEST", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 --Tabs
@@ -8,7 +8,7 @@ local Window = OrionLib:MakeWindow({Name = "Capy Hub V2", HidePremium = false, S
 
 local Tab1 = Window:MakeTab({
 	Name = "Universal",
-	Icon = "rbxassetid://4483345998",
+	Icon = "🧿",
 	PremiumOnly = false
 })
 
@@ -30,6 +30,11 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab5 = Window:MakeTab({
+	Name = "Cài Đặt",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 
 --Sections
 
@@ -48,6 +53,10 @@ local Section = Tab3:AddSection({
 
 local Section = Tab4:AddSection({
 	Name = "Bee Swarm Scripts"
+})
+
+local Section = Tab5:AddSection({
+	Name = "Cài Đặt"
 })
 
 
@@ -230,6 +239,14 @@ Tab4:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov3.lua"))()
   	end    
+})
+
+Tab:AddColorpicker({
+	Name = "Colorpicker",
+	Default = Color3.fromRGB(126, 209, 230),
+	Callback = function(Value)
+		print(Value)
+	end	  
 })
 
 OrionLib:Init()
