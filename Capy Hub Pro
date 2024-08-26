@@ -168,6 +168,24 @@ Tab1:AddToggle({
     end
 })
 
+Tab1:AddButton({
+	Name = "Tăng Fps (thường)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/b3GerRtj",true))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Tăng Fps (xóa hết tất cả mọi thứ)",
+	Callback = function()
+      		for _, i in pairs(game.Workspace:GetDescendants())  do
+                if i:IsA("BasePart") or i:IsA("Part") or i:IsA("MeshPart") or 
+                i:IsA("Decal") then  
+                    i.Transparency = 1
+                end
+            end
+  	end    
+})
 
 --Buttons Tab2
 
