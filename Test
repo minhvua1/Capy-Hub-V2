@@ -1,6 +1,6 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Capy Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Truan Béo Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 --Tabs
