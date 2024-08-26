@@ -30,6 +30,7 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+
 --Sections
 
 
@@ -48,6 +49,7 @@ local Section = Tab3:AddSection({
 local Section = Tab4:AddSection({
 	Name = "Bee Swarm Scripts"
 })
+
 
 --Buttons Tab1
 
@@ -147,6 +149,7 @@ Tab2:AddTextbox({
 	end	  
 })
 
+
 --Buttons Tab3
 
 Tab3:AddButton({
@@ -160,6 +163,59 @@ Tab3:AddButton({
 	Name = "W Azure",
 	Callback = function()
       		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Andepzai Hub",
+	Callback = function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/AnDepZaiHub/AnDepZaiHubBeta/main/AnDepZaiHubBeta.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "REDz Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Doraemon Hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/onepicesenpai/onepicesenpai/main/onichanokaka'))()
+  	end    
+})
+
+
+--Buttons Tab4
+
+
+Tab4:AddButton({
+	Name = "Beecon Hub (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBossScript/BeeSwarmSim/main/BeeSwarmSim"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Adel Hub (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AdelOnTheTop/Adel-Hub/main/Main.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Atlas BSS",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Chris8889/atlasbss/main/script.lua"))()
+  	end    
+})
+
+Tab4:AddButton({
+	Name = "Macro V3 (key trong discord server)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov3.lua"))()
   	end    
 })
 
