@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Capy Scripts Hub V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Capy Hub V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 --Tabs
@@ -36,6 +36,36 @@ local Tab5 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab6 = Window:MakeTab({
+	Name = "Murder Mystery 2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab7 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab8 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab9 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab10 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 
 --Sections
 
@@ -58,6 +88,26 @@ local Section = Tab4:AddSection({
 
 local Section = Tab5:AddSection({
 	Name = "A Dusty Trip Scripts"
+})
+
+local Section = Tab6:AddSection({
+	Name = "Murder Mystery 2 Scripts"
+})
+
+local Section = Tab7:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab8:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab9:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab10:AddSection({
+	Name = "Chưa Có"
 })
 
 --Buttons Tab1
@@ -241,7 +291,16 @@ Tab4:AddButton({
   	end    
 })
 
---Buttons Tabs 5
+Tab4:AddButton({
+	Name = "Norepinefrina (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://norepinefrina.com"))()
+  	end    
+})
+
+
+--Buttons Tab5
+
 
 Tab5:AddButton({
 	Name = "Erudite Hub (có key)",
@@ -263,5 +322,39 @@ Tab5:AddButton({
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/EruditeHubV2/main/eruditehubdupeV2source"))()
   	end    
 })
+
+
+--Buttons Tab6
+
+
+Tab6:AddButton({
+	Name = "Symphony Hub",
+	Callback = function()
+                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "HightLight Hub (key hiện tại: hlvipcomingsoon)",
+	Callback = function()
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Main"))()  
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "HightLight Hub LITE (key hiện tại: hlvipcomingsoon)",
+	Callback = function()
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Lite"))() 
+  	end    
+})
+
+--Buttons Tab7
+
+--Buttons Tab8
+
+--Buttons Tab9
+
+--Buttons Tab10
+
 
 OrionLib:Init()
