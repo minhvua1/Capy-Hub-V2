@@ -35,6 +35,69 @@ local Tab5 = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 
+--Sections
+
+local Section = Tab1:AddSection({
+	Name = "Universal Scripts"
+})
+
+local Section = Tab2:AddSection({
+	Name = "Scripts Cho Nhân Vật"
+})
+
+local Section = Tab3:AddSection({
+	Name = "Blox Fruits Scripts"
+})
+
+local Section = Tab4:AddSection({
+	Name = "Bee Swarm Simulator Scripts"
+})
+
+local Section = Tab5:AddSection({
+	Name = "Settings"
+})
+
+--ToggleUi
+
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+ 
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Toggle"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+    Game:GetService("VirtualInputManager"):SendKeyEvent(true, "K" , false , game)
+end)
+
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
+
+--Keybind
+
+Tab5:AddBind({
+	Name = "Phím",
+	Default = Enum.KeyCode.K,
+	Hold = false,
+	Callback = function()
+		print("press")
+	end    
+})
+
+
 --Buttons Tab1
 
 
