@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://pastebin.com/raw/WRUyYTdY')))()
 
-local Window = OrionLib:MakeWindow({Name = "Capy Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Capy Hub V2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 --Tabs
@@ -187,6 +187,19 @@ Tab3:AddButton({
   	end    
 })
 
+Tab3:AddButton({
+	Name = "MinGaming Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Basicallyybeta/mingane/main/mingaminghihi.lua"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "Cokka Hub",
+	Callback = function()
+      		loadstring(game:HttpGet"https://raw.githubusercontent.com/UserDevEthical/Loadstring/main/CokkaHub.lua")()
+  	end    
+})
 
 --Buttons Tab4
 
