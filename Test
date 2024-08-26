@@ -30,6 +30,11 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab5 = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+
 
 --Sections
 
@@ -51,6 +56,9 @@ local Section = Tab4:AddSection({
 })
 
 
+--ToggleUi
+
+
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScreenGui"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -68,13 +76,24 @@ Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 28.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
-    Library:ToggleUI()
+    Game:GetService("VirtualInputManager"):SendKeyEvent(true, "K" , false , game)
 end)
  
 local Corner = Instance.new("UICorner")
 Corner.Name = "Corner"
 Corner.Parent = Toggle
 
+
+--Keybind
+
+Tab:AddBind({
+	Name = "Phím",
+	Default = Enum.KeyCode.K,
+	Hold = false,
+	Callback = function()
+		print("press")
+	end    
+})
 
 --Buttons Tab1
 
