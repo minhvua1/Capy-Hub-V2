@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Capy Hub V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Capy Scripts Hub V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 
 --Tabs
@@ -30,6 +30,12 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab5 = Window:MakeTab({
+	Name = "A Dusty Trip",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 
 --Sections
 
@@ -50,6 +56,9 @@ local Section = Tab4:AddSection({
 	Name = "Bee Swarm Scripts"
 })
 
+local Section = Tab5:AddSection({
+	Name = "A Dusty Trip Scripts"
+})
 
 --Buttons Tab1
 
@@ -229,6 +238,29 @@ Tab4:AddButton({
 	Name = "Macro V3 (key trong discord server)",
 	Callback = function()
       		loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov3.lua"))()
+  	end    
+})
+
+--Buttons Tabs 5
+
+Tab5:AddButton({
+	Name = "Erudite Hub (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/EruditeHub/main/A%20Dusty%20Trip/V3F"))()
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Connect Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Dupe Items",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/EruditeHubV2/main/eruditehubdupeV2source"))()
   	end    
 })
 
