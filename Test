@@ -1,1 +1,170 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+local Window = OrionLib:MakeWindow({Name = "Capy Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+--Tabs
+
+
+local Tab1 = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Nhân Vật",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Blox Fruits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
+	Name = "Bee Swarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+--Sections
+
+
+local Section = Tab1:AddSection({
+	Name = "Universal Scripts"
+})
+
+local Section = Tab2:AddSection({
+	Name = "Scripts Cho Nhân Vật"
+})
+
+local Section = Tab3:AddSection({
+	Name = "Blox Fruits Scripts"
+})
+
+local Section = Tab4:AddSection({
+	Name = "Bee Swarm Scripts"
+})
+
+
+--Buttons Tab1
+
+
+Tab1:AddButton({
+	Name = "Infinite Yeild",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Bay",
+	Callback = function()
+      		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FLY-GUI-V3-8031"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Bàn Phím",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Gui Tăng Hitbox",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Fling Người Chơi",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+  	end    
+})
+
+Tab1:AddToggle({
+    Name = "Tăng Độ Sáng Cho Game",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            game:GetService("Lighting").Brightness = 15
+            game:GetService("Lighting").ClockTime = 12
+            game:GetService("Lighting").FogEnd = 1000
+            game:GetService("Lighting").GlobalShadows = true
+            game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+        else
+            game:GetService("Lighting").Brightness = 1
+            game:GetService("Lighting").ClockTime = 14
+            game:GetService("Lighting").FogEnd = 100000
+            game:GetService("Lighting").GlobalShadows = false
+            game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(127, 127, 127)
+        end
+    end
+})
+
+
+--Buttons Tab2
+
+
+Tab2:AddTextbox({
+	Name = "Tăng Tốc Độ Di Chuyển (mặc định là 16)",
+	Default = "16",
+	TextDisappear = true,
+	Callback = function(Value)
+		local number = tonumber(Value)
+		if number then
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = number
+		end
+	end	  
+})
+
+Tab2:AddTextbox({
+	Name = "Nhảy Cao (mặc định là 50)",
+	Default = "50",
+	TextDisappear = true,
+	Callback = function(Value)
+		local number = tonumber(Value)
+		if number then
+			game.Players.LocalPlayer.Character.Humanoid.JumpPower = number
+		end
+	end	  
+})
+
+Tab2:AddTextbox({
+	Name = "FOV (mặc định là 70)",
+	Default = "70",
+	TextDisappear = true,
+	Callback = function(Value)
+		local number = tonumber(Value)
+		if number then
+			game.Workspace.CurrentCamera.FieldOfView = number
+		end
+	end	  
+})
+
+
+--Buttons Tab3
+
+
+Tab3:AddButton({
+	Name = "HoHo Hub (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+  	end    
+})
+
+Tab3:AddButton({
+	Name = "W Azure",
+	Callback = function()
+      		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+  	end    
+})
+
+OrionLib:Init()
