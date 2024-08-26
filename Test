@@ -86,7 +86,7 @@ Corner.Parent = Toggle
 
 --Keybind
 
-Tab:AddBind({
+Tab5:AddBind({
 	Name = "Phím",
 	Default = Enum.KeyCode.K,
 	Hold = false,
