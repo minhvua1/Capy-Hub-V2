@@ -253,7 +253,7 @@ Tab1:AddButton({
   	end    
 })
 
-Tab:AddButton({
+Tab1:AddButton({
 	Name = "Ẩn Người Chơi",
 	Callback = function()
       		local allplayer = {}
