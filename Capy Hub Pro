@@ -55,10 +55,6 @@ local Section = Tab4:AddSection({
 	Name = "Bee Swarm Scripts"
 })
 
-local Section = Tab5:AddSection({
-	Name = "Settings"
-})
-
 --Buttons Tab1
 
 
@@ -171,17 +167,6 @@ Tab3:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
   	end    
-})
-
---Buttons Tab5
-
-Tab:AddBind({
-	Name = "Phím Để Ẩn",
-	Default = Enum.KeyCode.K,
-	Hold = false,
-	Callback = function()
-		print("press")
-	end    
 })
 
 OrionLib:Init()
