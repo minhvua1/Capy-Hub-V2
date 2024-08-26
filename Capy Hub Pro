@@ -30,12 +30,6 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Tab5 = Window:MakeTab({
-	Name = "Settings",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-
-
 --Sections
 
 
