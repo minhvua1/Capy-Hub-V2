@@ -458,7 +458,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ChopLoris/ArcHub/main
 })
 
 Tab7:AddButton({
-	Name = "BlackTrap",
+	Name = "BlackTrap (có key)",
 	Callback = function()
                loadstring(game:HttpGetAsync("https://lua-library.btteam.net/script-auth.txt"))()
   	end    
