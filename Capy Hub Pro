@@ -253,6 +253,20 @@ Tab1:AddButton({
   	end    
 })
 
+Tab1:AddToggle({
+    Name = "Tắt 3D Render",
+    Default = false,
+    Callback = function(value)
+        if value then
+            game:GetService("RunService"):Set3dRenderingEnabled(false)
+            print("3D Render Disablded")
+        else
+            game:GetService("RunService"):Set3dRenderingEnabled(true)
+            print("3D Render Enable")
+        end
+    end
+})
+
 
 --Buttons Tab2
 
