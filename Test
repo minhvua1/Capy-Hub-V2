@@ -254,15 +254,15 @@ Tab1:AddButton({
 })
 
 Tab1:AddToggle({
-    Name = "Enable 3D Rendering",
+    Name = "Tắt 3D Render (tăng hiệu năng, tiết kiệm pin) ",
     Default = false,
     Callback = function(value)
         if value then
-            game:GetService("RunService"):Set3dRenderingEnabled(true)
-            print("3D Render Enabled")
-        else
             game:GetService("RunService"):Set3dRenderingEnabled(false)
             print("3D Render Disabled")
+        else
+            game:GetService("RunService"):Set3dRenderingEnabled(true)
+            print("3D Render Enable")
         end
     end
 })
