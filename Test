@@ -253,11 +253,18 @@ Tab1:AddButton({
   	end    
 })
 
-Tab1:AddButton({
-	Name = "Ẩn Người Chơi",
-	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Capy-Hub-V2/main/Hide%20Player"))()
-  	end    
+Tab1:AddToggle({
+    Name = "Enable 3D Rendering",
+    Default = false,
+    Callback = function(value)
+        if value then
+            game:GetService("RunService"):Set3dRenderingEnabled(true)
+            print("3D Render Enabled")
+        else
+            game:GetService("RunService"):Set3dRenderingEnabled(false)
+            print("3D Render Disabled")
+        end
+    end
 })
 
 --Buttons Tab2
