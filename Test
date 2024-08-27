@@ -253,16 +253,294 @@ Tab1:AddButton({
   	end    
 })
 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Capy Hub V1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+--Tabs
+
+
+local Tab1 = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Nhân Vật",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Blox Fruits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab4 = Window:MakeTab({
+	Name = "Bee Swarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab5 = Window:MakeTab({
+	Name = "A Dusty Trip",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
+	Name = "Murder Mystery 2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab7 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab8 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab9 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab10 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+--Sections
+
+
+local Section = Tab1:AddSection({
+	Name = "Universal Scripts"
+})
+
+local Section = Tab2:AddSection({
+	Name = "Scripts Cho Nhân Vật"
+})
+
+local Section = Tab3:AddSection({
+	Name = "Blox Fruits Scripts"
+})
+
+local Section = Tab4:AddSection({
+	Name = "Bee Swarm Scripts"
+})
+
+local Section = Tab5:AddSection({
+	Name = "A Dusty Trip Scripts"
+})
+
+local Section = Tab6:AddSection({
+	Name = "Murder Mystery 2 Scripts"
+})
+
+local Section = Tab7:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab8:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab9:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab10:AddSection({
+	Name = "Chưa Có"
+})
+
+--Buttons Tab1
+
+
+Tab1:AddButton({
+	Name = "Infinite Yeild",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Bay",
+	Callback = function()
+      		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FLY-GUI-V3-8031"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Bàn Phím",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Gui Tăng Hitbox",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Fling Người Chơi",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+  	end    
+})
+
 Tab1:AddToggle({
-    Name = "Tắt 3D Render (tăng hiệu năng, tiết kiệm pin) ",
+    Name = "Tăng Độ Sáng Cho Game",
     Default = false,
-    Callback = function(value)
-        if value then
-            game:GetService("RunService"):Set3dRenderingEnabled(false)
-            print("3D Render Disabled")
+    Callback = function(Value)
+        if Value then
+            game:GetService("Lighting").Brightness = 15
+            game:GetService("Lighting").ClockTime = 12
+            game:GetService("Lighting").FogEnd = 1000
+            game:GetService("Lighting").GlobalShadows = true
+            game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(128, 128, 128)
         else
+            game:GetService("Lighting").Brightness = 1
+            game:GetService("Lighting").ClockTime = 14
+            game:GetService("Lighting").FogEnd = 100000
+            game:GetService("Lighting").GlobalShadows = false
+            game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(127, 127, 127)
+        end
+    end
+})
+
+Tab1:AddButton({
+	Name = "Tăng Fps (thường)",
+	Callback = function()
+      		local function applyOptimizations()
+    local workspace = game.Workspace
+    local lighting = game.Lighting
+    local terrain = workspace.Terrain
+    local starterGui = game:GetService("StarterGui")
+
+    terrain.WaterWaveSize = 0
+    terrain.WaterWaveSpeed = 0
+    terrain.WaterReflectance = 0
+    terrain.WaterTransparency = 0
+
+    lighting.GlobalShadows = false
+    lighting.FogEnd = 9e9
+    lighting.Brightness = 0
+
+    settings().Rendering.QualityLevel = "Level01"
+
+    for _, descendant in pairs(game:GetDescendants()) do
+        if descendant:IsA("BasePart") or descendant:IsA("MeshPart") then
+            descendant.Material = "SmoothPlastic"
+            descendant.Reflectance = 0
+            descendant.CastShadow = false
+        elseif descendant:IsA("Decal") then
+            descendant.Transparency = 1
+        elseif descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") then
+            descendant.Lifetime = NumberRange.new(0)
+        elseif descendant:IsA("Explosion") then
+            descendant.BlastPressure = 1
+            descendant.BlastRadius = 1
+        elseif descendant:IsA("Fire") or descendant:IsA("SpotLight") or descendant:IsA("Smoke") then
+            descendant.Enabled = false
+        end
+    end
+
+    for _, effect in pairs(lighting:GetChildren()) do
+        if effect:IsA("PostEffect") or effect:IsA("DepthOfFieldEffect") then
+            effect.Enabled = false
+        end
+    end
+
+    setclipboard("")
+
+    starterGui:SetCore("SendNotification", {
+        Title = "FPS Boost",
+        Text = "The FPS Boost has applied!\nDiscord link copied to clipboard!",
+        Duration = 7,
+        Style = {
+            Title = {
+                Font = Enum.Font.SourceSansBold,
+                TextSize = 20,
+                TextStrokeTransparency = 0,
+                TextColor = Color3.new(1, 1, 1),
+            },
+            Background = {
+                Transparency = 0.1,
+                BackgroundColor3 = Color3.new(0, 0.7, 1),
+                BorderSizePixel = 0,
+            },
+        },
+    })
+
+    print("The FPS Boost has applied!")
+    print("Discord link copied to clipboard!")
+    print("Made by entity. Enjoy the ultimate performance boost!")
+end
+
+applyOptimizations()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Tăng Fps (xóa hết tất cả mọi thứ)",
+	Callback = function()
+      		for _, i in pairs(game.Workspace:GetDescendants())  do
+                if i:IsA("BasePart") or i:IsA("Part") or i:IsA("MeshPart") or 
+                i:IsA("Decal") then  
+                    i.Transparency = 1
+                end
+            end
+  	end    
+})
+
+Tab1:AddToggle({
+    Name = "Enable 3D Rendering",
+    Default = true,
+    Callback = function(value)
+        local lighting = game:GetService("Lighting")
+        local terrain = game.Workspace.Terrain
+
+        if value then
             game:GetService("RunService"):Set3dRenderingEnabled(true)
-            print("3D Render Enable")
+            -- Reset colors and effects when enabling 3D rendering
+            lighting.Brightness = 1
+            lighting.GlobalShadows = true
+            terrain.WaterWaveSize = 0.5
+            terrain.WaterWaveSpeed = 0.5
+            terrain.WaterReflectance = 0.5
+            terrain.WaterTransparency = 0.5
+            print("3D Render Enabled")
+        else
+            game:GetService("RunService"):Set3dRenderingEnabled(false)
+            -- Set background to black and adjust other properties
+            lighting.Brightness = 0
+            lighting.GlobalShadows = false
+            terrain.WaterWaveSize = 0
+            terrain.WaterWaveSpeed = 0
+            terrain.WaterReflectance = 0
+            terrain.WaterTransparency = 0
+            -- Optionally set all parts to black color
+            for _, part in pairs(game.Workspace:GetDescendants()) do
+                if part:IsA("BasePart") or part:IsA("MeshPart") then
+                    part.Color = Color3.new(0, 0, 0) -- Black color
+                end
+            end
+            print("3D Render Disabled and background set to black")
         end
     end
 })
