@@ -30,6 +30,42 @@ local Tab4 = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local Tab5 = Window:MakeTab({
+	Name = "A Dusty Trip",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab6 = Window:MakeTab({
+	Name = "Murder Mystery 2",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab7 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab8 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab9 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab10 = Window:MakeTab({
+	Name = "Chưa Có",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 
 --Sections
 
@@ -50,6 +86,29 @@ local Section = Tab4:AddSection({
 	Name = "Bee Swarm Scripts"
 })
 
+local Section = Tab5:AddSection({
+	Name = "A Dusty Trip Scripts"
+})
+
+local Section = Tab6:AddSection({
+	Name = "Murder Mystery 2 Scripts"
+})
+
+local Section = Tab7:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab8:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab9:AddSection({
+	Name = "Chưa Có"
+})
+
+local Section = Tab10:AddSection({
+	Name = "Chưa Có"
+})
 
 --Buttons Tab1
 
@@ -109,6 +168,108 @@ Tab1:AddToggle({
     end
 })
 
+Tab1:AddButton({
+	Name = "Tăng Fps (thường)",
+	Callback = function()
+      		local function applyOptimizations()
+    local workspace = game.Workspace
+    local lighting = game.Lighting
+    local terrain = workspace.Terrain
+    local starterGui = game:GetService("StarterGui")
+
+    terrain.WaterWaveSize = 0
+    terrain.WaterWaveSpeed = 0
+    terrain.WaterReflectance = 0
+    terrain.WaterTransparency = 0
+
+    lighting.GlobalShadows = false
+    lighting.FogEnd = 9e9
+    lighting.Brightness = 0
+
+    settings().Rendering.QualityLevel = "Level01"
+
+    for _, descendant in pairs(game:GetDescendants()) do
+        if descendant:IsA("BasePart") or descendant:IsA("MeshPart") then
+            descendant.Material = "SmoothPlastic"
+            descendant.Reflectance = 0
+            descendant.CastShadow = false
+        elseif descendant:IsA("Decal") then
+            descendant.Transparency = 1
+        elseif descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") then
+            descendant.Lifetime = NumberRange.new(0)
+        elseif descendant:IsA("Explosion") then
+            descendant.BlastPressure = 1
+            descendant.BlastRadius = 1
+        elseif descendant:IsA("Fire") or descendant:IsA("SpotLight") or descendant:IsA("Smoke") then
+            descendant.Enabled = false
+        end
+    end
+
+    for _, effect in pairs(lighting:GetChildren()) do
+        if effect:IsA("PostEffect") or effect:IsA("DepthOfFieldEffect") then
+            effect.Enabled = false
+        end
+    end
+
+    setclipboard("")
+
+    starterGui:SetCore("SendNotification", {
+        Title = "FPS Boost",
+        Text = "The FPS Boost has applied!\nDiscord link copied to clipboard!",
+        Duration = 7,
+        Style = {
+            Title = {
+                Font = Enum.Font.SourceSansBold,
+                TextSize = 20,
+                TextStrokeTransparency = 0,
+                TextColor = Color3.new(1, 1, 1),
+            },
+            Background = {
+                Transparency = 0.1,
+                BackgroundColor3 = Color3.new(0, 0.7, 1),
+                BorderSizePixel = 0,
+            },
+        },
+    })
+
+    print("The FPS Boost has applied!")
+    print("Discord link copied to clipboard!")
+    print("Made by entity. Enjoy the ultimate performance boost!")
+end
+
+applyOptimizations()
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Tăng Fps (xóa hết tất cả mọi thứ)",
+	Callback = function()
+      		for _, i in pairs(game.Workspace:GetDescendants())  do
+                if i:IsA("BasePart") or i:IsA("Part") or i:IsA("MeshPart") or 
+                i:IsA("Decal") then  
+                    i.Transparency = 1
+                end
+            end
+  	end    
+})
+
+Tab1:AddButton({
+	Name = "Ẩn Người Chơi",
+	Callback = function()
+      		local allplayer = {}
+            for , player in pairs(game.Players:GetPlayers()) do
+                table.insert(allplayer, player.Name)
+            end
+
+            for , obj in pairs(game.Workspace:GetChildren()) do
+                for _, playerName in pairs(allplayer) do
+                    if obj.Name == playerName and obj.Name ~= game.Players.LocalPlayer.Name then
+                        obj:Destroy()
+                    end
+                end
+            end
+  	end    
+})
 
 --Buttons Tab2
 
@@ -231,5 +392,71 @@ Tab4:AddButton({
       		loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov3.lua"))()
   	end    
 })
+
+Tab4:AddButton({
+	Name = "Norepinefrina (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://norepinefrina.com"))()
+  	end    
+})
+
+
+--Buttons Tab5
+
+
+Tab5:AddButton({
+	Name = "Erudite Hub (có key)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/EruditeHub/main/A%20Dusty%20Trip/V3F"))()
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Connect Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/artemy133563/Utilities/main/ADustyTrip",true))()
+  	end    
+})
+
+Tab5:AddButton({
+	Name = "Dupe Items",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ThacG/EruditeHubV2/main/eruditehubdupeV2source"))()
+  	end    
+})
+
+
+--Buttons Tab6
+
+
+Tab6:AddButton({
+	Name = "Symphony Hub",
+	Callback = function()
+                 loadstring(game:HttpGet('https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua'))()
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "HightLight Hub (key hiện tại: hlvipcomingsoon)",
+	Callback = function()
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Main"))()  
+  	end    
+})
+
+Tab6:AddButton({
+	Name = "HightLight Hub LITE (key hiện tại: hlvipcomingsoon)",
+	Callback = function()
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Lite"))() 
+  	end    
+})
+
+--Buttons Tab7
+
+--Buttons Tab8
+
+--Buttons Tab9
+
+--Buttons Tab10
+
 
 OrionLib:Init()
