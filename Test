@@ -170,6 +170,11 @@ Tab1:AddToggle({
     end
 })
 
+local Section = Tab1:AddSection({
+	Name = "Tăng Hiệu Năng"
+})
+
+
 Tab1:AddButton({
 	Name = "Tăng Fps (thường)",
 	Callback = function()
@@ -268,6 +273,11 @@ Tab1:AddToggle({
         end
     end
 })
+
+local Section = Tab1:AddSection({
+	Name = "Hỗ Trợ"
+})
+
 
 Tab1:AddButton({
 	Name = "Vô Server Ít Người",
