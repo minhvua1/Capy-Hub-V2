@@ -1,0 +1,12 @@
+local allplayer = {}
+            for , player in pairs(game.Players:GetPlayers()) do
+                table.insert(allplayer, player.Name)
+            end
+
+            for , obj in pairs(game.Workspace:GetChildren()) do
+                for _, playerName in pairs(allplayer) do
+                    if obj.Name == playerName and obj.Name ~= game.Players.LocalPlayer.Name then
+                        obj:Destroy()
+                    end
+                end
+            end
