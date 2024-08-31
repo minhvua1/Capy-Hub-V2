@@ -71,6 +71,45 @@ local Tab10 = Window:MakeTab({
 
 --Sections
 
+-- Tạo một Toggle Button có thể kéo được
+local ScreenGui = Instance.new("ScreenGui", game.Players.LocalPlayer:WaitForChild("PlayerGui"))
+local DraggableToggle = Instance.new("Frame", ScreenGui)
+local ToggleButton = Instance.new("TextButton", DraggableToggle)
+
+-- Cài đặt thuộc tính cho Draggable Toggle
+DraggableToggle.Size = UDim2.new(0, 100, 0, 50)
+DraggableToggle.Position = UDim2.new(0.5, -50, 0.5, -25) -- Căn giữa màn hình
+DraggableToggle.BackgroundTransparency = 0.3
+DraggableToggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+DraggableToggle.BorderSizePixel = 2
+DraggableToggle.Active = true
+DraggableToggle.Draggable = true
+
+-- Cài đặt thuộc tính cho nút bật/tắt
+ToggleButton.Size = UDim2.new(1, 0, 1, 0)
+ToggleButton.Position = UDim2.new(0, 0, 0, 0)
+ToggleButton.BackgroundTransparency = 1
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.TextScaled = true
+ToggleButton.Font = Enum.Font.SourceSansBold
+ToggleButton.Text = "TẮT"
+
+local isToggled = false
+
+ToggleButton.MouseButton1Click:Connect(function()
+    isToggled = not isToggled
+    if isToggled then
+        ToggleButton.Text = "BẬT"
+        -- Đặt mã hành động bật ở đây
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
+        print("3D Render Disabled")
+    else
+        ToggleButton.Text = "TẮT"
+        -- Đặt mã hành động tắt ở đây
+        game:GetService("RunService"):Set3dRenderingEnabled(true)
+        print("3D Render Enabled")
+    end
+end)
 
 local Section = Tab1:AddSection({
 	Name = "Universal Scripts"
