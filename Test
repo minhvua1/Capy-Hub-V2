@@ -3,30 +3,32 @@ local Window = Library.CreateLib("Capy Hub V2", "Serpent")
 
 --Tabs
 
-local Tab1 = Window:NewTab1("Universal")
-local Tab2 = Window:NewTab2("Nhân Vật")
-local Tab3 = Window:NewTab3("Blox Fruits")
-local Tab4 = Window:NewTab4("chưa có")
-local Tab5 = Window:NewTab5("chưa có")
-
+local UniTab = Window:NewTab("Universal")
+local PlayerTab = Window:NewTab("Nhân Vật")
+local BloxTab = Window:NewTab("Blox Fruits")
+local chuaTab = Window:NewTab("chưa có")
 
 --Sections
 
-local Section1 = Tab1:NewSection("Universal Scripts")
-local Section2 = Tab2:NewSection("Script Cho Nhân Vật")
-local Section3 = Tab3:NewSection("Universal Scripts")
-local Section4 = Tab4:NewSection("Universal Scripts")
-local Section5 = Tab5:NewSection("Universal Scripts")
+local UniTabSection = UniTab:NewSection("Universal Scripts")  -- Sửa từ 'Tab' thành 'UniTab'
+local PlayerTabSection = PlayerTab:NewSection("Script Cho Nhân Vật")  -- Sửa từ 'Tab' thành 'PlayerTab'
+local BloxTabSection = BloxTab:NewSection("Blox Fruits Scripts")  -- Sửa từ 'Tab' thành 'BloxTab'
+local chuaTabSection = chuaTab:NewSection("Chưa có Scripts")  -- Sửa từ 'Tab' thành 'chuaTab'
  
 --Buttons Tab1
 
-Section1:NewButton("Infinite Yeild", "ButtonInfo", function()
+UniTabSection:NewButton("Infinite Yield", "ButtonInfo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+--Buttons Tab2
+
+PlayerTabSection:NewButton("Infinite Yield", "ButtonInfo", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
  
- 
- --bật tắt
- 
+-- Toggle UI
+
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScreenGui"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
