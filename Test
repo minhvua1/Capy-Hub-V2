@@ -4,14 +4,14 @@ local Window = Library.CreateLib("Capy Hub V2", "Serpent")
 --Tabs
 
 local UniTab = Window:NewTab("Universal")
-local PlayerTab = Window:NewTab("Nhân Vật")
+local PlrTab = Window:NewTab("Nhân Vật")
 local BloxTab = Window:NewTab("Blox Fruits")
 local chuaTab = Window:NewTab("chưa có")
 
 --Sections
 
 local UniTabSection = UniTab:NewSection("Universal Scripts")  -- Sửa từ 'Tab' thành 'UniTab'
-local PlayerTabSection = PlayerTab:NewSection("Script Cho Nhân Vật")  -- Sửa từ 'Tab' thành 'PlayerTab'
+local PlrTabSection = PlrTab:NewSection("Script Cho Nhân Vật")  -- Sửa từ 'Tab' thành 'PlayerTab'
 local BloxTabSection = BloxTab:NewSection("Blox Fruits Scripts")  -- Sửa từ 'Tab' thành 'BloxTab'
 local chuaTabSection = chuaTab:NewSection("Chưa có Scripts")  -- Sửa từ 'Tab' thành 'chuaTab'
  
@@ -21,34 +21,28 @@ UniTabSection:NewButton("Infinite Yield", "ButtonInfo", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
 
---Buttons Tab2
-
-PlayerTabSection:NewButton("Infinite Yield", "ButtonInfo", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+UniTabSection:NewButton("Bay", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FLY-GUI-V3-8031"))()
 end)
- 
--- Toggle UI
 
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ScreenGui"
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ResetOnSpawn = false
- 
-local Toggle = Instance.new("TextButton")
-Toggle.Name = "Toggle"
-Toggle.Parent = ScreenGui
-Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
-Toggle.Size = UDim2.new(0, 90, 0, 38)
-Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "Bật/Tắt"
-Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
-Toggle.TextSize = 28.000
-Toggle.Draggable = true
-Toggle.MouseButton1Click:connect(function()
-    Library:ToggleUI()
+UniTabSection:NewButton("Bàn Phím", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
- 
-local Corner = Instance.new("UICorner")
-Corner.Name = "Corner"
-Corner.Parent = Toggle
+
+UniTabSection:NewButton("Script Tăng Hitbox", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
+end)
+
+UniTabSection:NewButton("Script Fling Người Chơi", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+end)
+
+--Tab1 Section ↓
+
+local UniTabSection = UniTab:NewSection("Hỗ Trợ")
+
+--Tab1 Section ↑
+
+UniTabSection:NewButton("Tăng FPS", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Capy-Hub-V2/refs/heads/main/Fps%20booster"))()
+end)
