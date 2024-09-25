@@ -37,12 +37,29 @@ UniTabSection:NewButton("Script Fling Người Chơi", "ButtonInfo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
 end)
 
---Tab1 Section ↓
-
 local UniTabSection = UniTab:NewSection("Hỗ Trợ")
-
---Tab1 Section ↑
 
 UniTabSection:NewButton("Tăng FPS", "ButtonInfo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Capy-Hub-V2/refs/heads/main/Fps%20booster"))()
+end)
+
+UniTabSection:NewButton("Ẩn Tất Cả Mọi Thứ", "ButtonInfo", function()
+  for _, i in pairs(game.Workspace:GetDescendants())  do
+                if i:IsA("BasePart") or i:IsA("Part") or i:IsA("MeshPart") or 
+                i:IsA("Decal") then  
+                    i.Transparency = 1
+                end
+            end
+end)
+
+UniTabSection:NewToggle("Bật/Tắt, 3D Render (Bth Là Bật)", "ToggleInfo", function(state)
+    if state then
+        game:GetService("RunService"):Set3dRenderingEnabled(true)
+    else
+        game:GetService("RunService"):Set3dRenderingEnabled(false)
+    end
+end)
+
+UniTabSection:NewButton("Hiện FPS Và Ping", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Capy-Hub-V2/refs/heads/main/ping%20and%20fps%20counter"))()
 end)
