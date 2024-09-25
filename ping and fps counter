@@ -1,0 +1,66 @@
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local ScreenGui = Instance.new("ScreenGui", LocalPlayer:WaitForChild("PlayerGui"))
+local MainFrame = Instance.new("Frame", ScreenGui)
+local FPSLabel = Instance.new("TextLabel", MainFrame)
+local PingLabel = Instance.new("TextLabel", MainFrame)
+
+MainFrame.Size = UDim2.new(0, 200, 0, 50)
+MainFrame.Position = UDim2.new(0.1, 0, 0.1, 0)
+MainFrame.BackgroundTransparency = 0.5
+MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+MainFrame.BorderSizePixel = 2
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+FPSLabel.Size = UDim2.new(1, 0, 0.5, 0)
+FPSLabel.Position = UDim2.new(0, 0, 0, 0)
+FPSLabel.BackgroundTransparency = 1
+FPSLabel.TextColor3 = Color3.new(1, 1, 1)
+FPSLabel.TextScaled = true
+FPSLabel.Font = Enum.Font.SourceSans
+FPSLabel.Text = "FPS: Calculating..."
+
+PingLabel.Size = UDim2.new(1, 0, 0.5, 0)
+PingLabel.Position = UDim2.new(0, 0, 0.5, 0)
+PingLabel.BackgroundTransparency = 1
+PingLabel.TextColor3 = Color3.new(1, 1, 1)
+PingLabel.TextScaled = true
+PingLabel.Font = Enum.Font.SourceSans
+PingLabel.Text = "Ping: Calculating..."
+
+local fpsUpdateInterval = 0.5 -- cập nhật mỗi 0.5 giây
+local lastFPSUpdateTime = 0
+
+local lastTime = tick()
+local function updateFPS()
+    local currentTime = tick()
+    if currentTime - lastFPSUpdateTime >= fpsUpdateInterval then
+        local fps = math.floor(1 / (currentTime - lastTime))
+        FPSLabel.Text = "FPS: " .. fps
+        lastFPSUpdateTime = currentTime
+    end
+    lastTime = currentTime
+end
+
+local function updatePing()
+    local ping = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())
+    PingLabel.Text = "Ping: " .. ping .. " ms"
+end
+
+RunService.RenderStepped:Connect(function()
+    updateFPS()
+    updatePing()
+end)
+
+local hue = 0
+RunService.RenderStepped:Connect(function()
+    hue = hue + 0.01
+    if hue > 1 then
+        hue = 0
+    end
+    MainFrame.BorderColor3 = Color3.fromHSV(hue, 1, 1)
+end)
+ 
