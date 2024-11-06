@@ -399,7 +399,7 @@ G2L["28"]["TextSize"] = 15;
 G2L["28"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["28"]["Size"] = UDim2.new(0, 25, 0, 25);
 G2L["28"]["Active"] = true;
-G2L["28"]["Text"] = [[_]];
+G2L["28"]["Text"] = [[-]];
 G2L["28"]["Name"] = [[NameText]];
 G2L["28"]["BackgroundTransparency"] = 1;
 
