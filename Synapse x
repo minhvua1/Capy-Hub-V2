@@ -1,6 +1,6 @@
 -- Synapse X Remake made by @chillz_azy (yt)
 
-local synversion = "2.649.716"
+local synversion = "2.23.11"
 
 -- this shit function makes my script fucked
 --[[pcall(function()
