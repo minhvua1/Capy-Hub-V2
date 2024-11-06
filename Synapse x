@@ -515,7 +515,7 @@ G2L["35"] = Instance.new("ImageButton", G2L["33"]);
 G2L["35"]["BackgroundColor3"] = Color3.fromRGB(0, 55, 81);
 G2L["35"]["Size"] = UDim2.new(0, 15, 0, 15);
 G2L["35"]["BorderColor3"] = Color3.fromRGB(99, 150, 182);
-G2L["35"]["Visible"] = false;
+G2L["35"]["Visible"] = true;
 G2L["35"]["BackgroundTransparency"] = 0.6000000238418579;
 
 -- StarterGui.SynapseX.Main.Close.UICorner
