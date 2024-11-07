@@ -1,6 +1,6 @@
 -- Synapse X Remake made by Idk
 
-local synversion = "2.649.718"
+local synversion = "v2.786.675"
 
 -- this shit function makes my script fucked
 --[[pcall(function()
@@ -304,7 +304,7 @@ G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]
 G2L["1e"]["TextSize"] = 15;
 G2L["1e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["1e"]["Size"] = UDim2.new(0, 646, 0, 27);
-G2L["1e"]["Text"] = "Synapse X Remake - "..synversion;
+G2L["1e"]["Text"] = "Synapse Z - "..synversion;
 G2L["1e"]["Name"] = [[TitleSynapse]];
 G2L["1e"]["BackgroundTransparency"] = 1;
 
