@@ -3057,7 +3057,7 @@ local function C_49()
 	end)
 	buttons.Execute.MouseButton1Up:Connect(function()
 		if not injected then
-			title.Text = "Synapse X - "..synversion.." (not injected! press attach)"
+			title.Text = "Synapse Z - "..synversion.." (not injected! press attach)"
 		elseif injected == true then
 
 			local textbox = GetTextbox()
@@ -3067,22 +3067,22 @@ local function C_49()
 	end)
 	buttons.Attach.MouseButton1Up:Connect(function()
 		if not injected then
-			title.Text = "Synapse X Remake - "..synversion.." (checking...)"
-			task.wait(0.5)
-			title.Text = "Synapse X Remake - "..synversion.." (injecting...)"
-			task.wait(0.5)
-			title.Text = "Synapse X Remake - "..synversion.." (checking whitelist...)"
-			task.wait(0.5)
-			title.Text = "Synapse X Remake - "..synversion.." (scanning...)"
-			task.wait(0.5)
-			title.Text = "Synapse X Remake - "..synversion.." (ready!)"
+			title.Text = "Synapse Z - "..synversion.." (checking...)"
+			task.wait(1)
+			title.Text = "Synapse Z - "..synversion.." (injecting...)"
+			task.wait(2.5)
+			title.Text = "Synapse Z - "..synversion.." (checking whitelist...)"
+			task.wait(1)
+			title.Text = "Synapse Z - "..synversion.." (scanning...)"
+			task.wait(0.8)
+			title.Text = "Synapse Z - "..synversion.." (ready!)"
 			injected = true
 			task.wait(1)
-			title.Text = "Synapse X Remake - "..synversion
+			title.Text = "Synapse Z - "..synversion
 		else
-			title.Text = "Synapse X Remake - "..synversion.." (already injected!)"
+			title.Text = "Synapse Z - "..synversion.." (already injected!)"
 			task.wait(1)
-			title.Text = "Synapse X Remake - "..synversion
+			title.Text = "Synapse Z - "..synversion
 		end
 	end)
 
