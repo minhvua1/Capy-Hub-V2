@@ -60,25 +60,32 @@ Rayfield:Notify({
 
 --buttons unitab
 
+local speedValue = 16  -- Giá trị mặc định ban đầu
+
+-- Tạo Slider cho tốc độ
 local UniSlider = UniTab:CreateSlider({
-   Name = "Tốc Độ",
+   Name = "toc do",
    Range = {0, 100},
    Increment = 1,
    Suffix = "Speed",
-   CurrentValue = 16,
+   CurrentValue = speedValue,
    Flag = "SpeedSlider",
    Callback = function(Value)
-      speedValue = Value
+      speedValue = Value  -- Cập nhật giá trị speedValue khi thay đổi slider
       if game.Players.LocalPlayer.Character then
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedValue
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedValue  -- Áp dụng tốc độ ngay lập tức
       end
    end,
 })
 
-local speedValue = 16
-
+-- Khi nhân vật hồi sinh, áp dụng lại tốc độ
 game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
-   character:WaitForChild("Humanoid").WalkSpeed = speedValue
+   character:WaitForChild("Humanoid").WalkSpeed = speedValue  -- Đặt tốc độ theo giá trị slider
 end)
+
+-- Đảm bảo tốc độ được áp dụng ngay khi nhân vật xuất hiện lần đầu
+if game.Players.LocalPlayer.Character then
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = speedValue
+end
 
 
