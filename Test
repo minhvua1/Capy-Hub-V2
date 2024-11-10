@@ -61,7 +61,7 @@ Rayfield:Notify({
 --buttons unitab
 
 local UniSlider = UniTab:CreateSlider({
-   Name = "Speed Control",
+   Name = "Tốc Độ",
    Range = {0, 100},
    Increment = 1,
    Suffix = "Speed",
@@ -75,7 +75,7 @@ local UniSlider = UniTab:CreateSlider({
    end,
 })
 
-local speedValue = SpeedSlider.CurrentValue
+local speedValue = 16
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
    character:WaitForChild("Humanoid").WalkSpeed = speedValue
