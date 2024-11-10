@@ -74,6 +74,15 @@ Rayfield:Notify({
    }
 })
 
+      Ignore = {
+         Name = "Bỏ qua2",
+         Callback = function()
+            print("The user tapped Bỏ qua!")
+         end
+      },
+   }
+})
+
 
 --buttons unitab
 
