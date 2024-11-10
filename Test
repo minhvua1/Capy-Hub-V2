@@ -37,14 +37,17 @@ local Window = Rayfield:CreateWindow({
 --tabs and sections
 
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
-local UniSection = UniTab:CreateSection("Universal Scripts")
+local UniSection = UniTab:CreateSection("Slider")
+
+local SupportTab = Window:CreateTab("Hỗ Trợ", 4483362458) -- Title, Image
+local SupportSection = SupportTab:CreateSection("Tăng Hiệu Năng")
 
 --Notifications
 
 Rayfield:Notify({
    Title = "Phiên Bản",
    Content = "Phiên Bản Hiện Tại V2.0",
-   Duration = 20,
+   Duration = 10Á,
    Image = 4483362458,
    Actions = { -- Notification Buttons
 
@@ -58,33 +61,9 @@ Rayfield:Notify({
 },
 })
 
-Rayfield:Notify({
-   Title = "Notification Title",
-   Content = "Notification Content",
-   Duration = 6.5,
-   Image = 4483362458,
-   Actions = {
-
-      Ignore = {
-         Name = "Bỏ qua",
-         Callback = function()
-            print("The user tapped Bỏ qua!")
-         end
-      },
-   }
-})
-
-      Ignore = {
-         Name = "Bỏ qua2",
-         Callback = function()
-            print("The user tapped Bỏ qua!")
-         end
-      },
-   }
-})
-
-
 --buttons unitab
+
+--slider
 
 local speedValue = 16  -- Giá trị mặc định ban đầu
 
@@ -160,3 +139,111 @@ workspace.Gravity = gravityValue
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
    workspace.Gravity = gravityValue
 end)
+
+--scripts
+
+local UniSection = UniTab:CreateSection("Scripts")
+
+local Button = UniTab:CreateButton({
+   Name = "Infinite Yeild",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Bay",
+   Callback = function()
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FLY-GUI-V3-8031"))()
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Bàn Phím",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Ui Tăng HitBox",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
+   end,
+})
+
+--buttons supporttab
+
+local Button = SupportTab:CreateButton({
+   Name = "Tăng Fps",
+   Callback = function()
+   local function applyOptimizations()
+    local workspace = game.Workspace
+    local lighting = game.Lighting
+    local terrain = workspace.Terrain
+    local starterGui = game:GetService("StarterGui")
+
+    terrain.WaterWaveSize = 0
+    terrain.WaterWaveSpeed = 0
+    terrain.WaterReflectance = 0
+    terrain.WaterTransparency = 0
+
+    lighting.GlobalShadows = false
+    lighting.FogEnd = 9e9
+    lighting.Brightness = 0
+
+    settings().Rendering.QualityLevel = "Level01"
+
+    for _, descendant in pairs(game:GetDescendants()) do
+        if descendant:IsA("BasePart") or descendant:IsA("MeshPart") then
+            descendant.Material = "SmoothPlastic"
+            descendant.Reflectance = 0
+            descendant.CastShadow = false
+        elseif descendant:IsA("Decal") then
+            descendant.Transparency = 1
+        elseif descendant:IsA("ParticleEmitter") or descendant:IsA("Trail") then
+            descendant.Lifetime = NumberRange.new(0)
+        elseif descendant:IsA("Explosion") then
+            descendant.BlastPressure = 1
+            descendant.BlastRadius = 1
+        elseif descendant:IsA("Fire") or descendant:IsA("SpotLight") or descendant:IsA("Smoke") then
+            descendant.Enabled = false
+        end
+    end
+
+    for _, effect in pairs(lighting:GetChildren()) do
+        if effect:IsA("PostEffect") or effect:IsA("DepthOfFieldEffect") then
+            effect.Enabled = false
+        end
+    end
+   end,
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
