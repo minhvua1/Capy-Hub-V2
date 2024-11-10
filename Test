@@ -44,11 +44,10 @@ local UniSection = UniTab:CreateSection("Universal Scripts")
 Rayfield:Notify({
    Title = "Phiên Bản",
    Content = "Phiên Bản Hiện Tại V2.0",
-   Duration = 10,
+   Duration = 20,
    Image = 4483362458,
    Actions = { -- Notification Buttons
 
-      Ignore = { -- Duplicate this table (or remove it) to add and remove buttons to the notification.
          Name = "Hiểu Rồi",
          Callback = function()
             print("BOO!")
