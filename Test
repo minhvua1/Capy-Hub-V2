@@ -57,3 +57,28 @@ Rayfield:Notify({
 
 },
 })
+
+--buttons unitab
+
+local UniSlider = UniTab:CreateSlider({
+   Name = "Speed Control",
+   Range = {0, 100},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 16,
+   Flag = "SpeedSlider",
+   Callback = function(Value)
+      speedValue = Value
+      if game.Players.LocalPlayer.Character then
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedValue
+      end
+   end,
+})
+
+local speedValue = SpeedSlider.CurrentValue
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
+   character:WaitForChild("Humanoid").WalkSpeed = speedValue
+end)
+
+
