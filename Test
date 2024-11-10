@@ -62,30 +62,75 @@ Rayfield:Notify({
 
 local speedValue = 16  -- Giá trị mặc định ban đầu
 
--- Tạo Slider cho tốc độ
 local UniSlider = UniTab:CreateSlider({
-   Name = "toc do",
+   Name = "tốc độ",
    Range = {0, 100},
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = speedValue,
    Flag = "SpeedSlider",
    Callback = function(Value)
-      speedValue = Value  -- Cập nhật giá trị speedValue khi thay đổi slider
+      speedValue = Value  
       if game.Players.LocalPlayer.Character then
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedValue  -- Áp dụng tốc độ ngay lập tức
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speedValue  
       end
    end,
 })
 
--- Khi nhân vật hồi sinh, áp dụng lại tốc độ
 game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
-   character:WaitForChild("Humanoid").WalkSpeed = speedValue  -- Đặt tốc độ theo giá trị slider
+   character:WaitForChild("Humanoid").WalkSpeed = speedValue  
 end)
 
--- Đảm bảo tốc độ được áp dụng ngay khi nhân vật xuất hiện lần đầu
 if game.Players.LocalPlayer.Character then
    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = speedValue
 end
 
 
+
+local jumpPowerValue = 50  -- Giá trị mặc định cho nhảy cao
+
+local UniSlider = UniTab:CreateSlider({
+   Name = "Nhảy Cao",
+   Range = {0, 200},
+   Increment = 1,
+   Suffix = "Jump Power",
+   CurrentValue = jumpPowerValue,
+   Flag = "JumpPowerSlider",
+   Callback = function(Value)
+      jumpPowerValue = Value 
+      if game.Players.LocalPlayer.Character then
+         game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumpPowerValue  
+      end
+   end,
+})
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
+   character:WaitForChild("Humanoid").JumpPower = jumpPowerValue  
+end)
+
+if game.Players.LocalPlayer.Character then
+   game.Players.LocalPlayer.Character:WaitForChild("Humanoid").JumpPower = jumpPowerValue
+end
+
+
+
+local gravityValue = 196
+
+local GravitySlider = Tab:CreateSlider({
+   Name = "Trọng Lực",
+   Range = {0, 500},
+   Increment = 1,
+   Suffix = "Gravity",
+   CurrentValue = gravityValue,
+   Flag = "GravitySlider",
+   Callback = function(Value)
+      gravityValue = Value
+      workspace.Gravity = gravityValue
+   end,
+})
+
+workspace.Gravity = gravityValue
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+   workspace.Gravity = gravityValue
+end)
