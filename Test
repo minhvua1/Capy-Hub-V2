@@ -47,7 +47,7 @@ local SupportSection = SupportTab:CreateSection("Tăng Hiệu Năng")
 Rayfield:Notify({
    Title = "Phiên Bản",
    Content = "Phiên Bản Hiện Tại V2.0",
-   Duration = 10Á,
+   Duration = 10,
    Image = 4483362458,
    Actions = { -- Notification Buttons
 
