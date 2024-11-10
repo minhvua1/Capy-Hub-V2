@@ -58,6 +58,22 @@ Rayfield:Notify({
 },
 })
 
+Rayfield:Notify({
+   Title = "Notification Title",
+   Content = "Notification Content",
+   Duration = 6.5,
+   Image = 4483362458,
+   Actions = {
+      Ignore = {
+         Name = "Bỏ qua",
+         Callback = function()
+            print("The user tapped Bỏ qua!")
+         end
+      },
+   }
+})
+
+
 --buttons unitab
 
 local speedValue = 16  -- Giá trị mặc định ban đầu
