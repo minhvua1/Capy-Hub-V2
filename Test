@@ -48,6 +48,7 @@ Rayfield:Notify({
    Image = 4483362458,
    Actions = { -- Notification Buttons
 
+      Ignore = {
          Name = "Hiểu Rồi",
          Callback = function()
             print("BOO!")
