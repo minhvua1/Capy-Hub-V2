@@ -64,6 +64,7 @@ Rayfield:Notify({
    Duration = 6.5,
    Image = 4483362458,
    Actions = {
+
       Ignore = {
          Name = "Bỏ qua",
          Callback = function()
@@ -132,7 +133,7 @@ end
 
 local gravityValue = 196
 
-local GravitySlider = Tab:CreateSlider({
+local UniSlider = UniTab:CreateSlider({
    Name = "Trọng Lực",
    Range = {0, 500},
    Increment = 1,
