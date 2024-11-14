@@ -44,20 +44,6 @@ local SupportSection = SupportTab:CreateSection("Tăng Hiệu Năng")
 
 --Notifications
 
-Rayfield:Notify({
-   Title = "Phiên Bản",
-   Content = "Phiên Bản Hiện Tại V2.0",
-   Duration = 10,
-   Image = 4483362458,
-   Actions = { -- Notification Buttons
-
-      Ignore = {
-         Name = "Hiểu Rồi",
-         Callback = function()
-            print("BOO!")
-         end
-      },
-
 --buttons unitab
 
 --slider
@@ -159,5 +145,12 @@ local Button = UniTab:CreateButton({
    Name = "Bàn Phím",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end,
+})
+
+local Button = UniTab:CreateButton({
+   Name = "Tăng Hitbox",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
    end,
 })
