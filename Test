@@ -163,7 +163,7 @@ local Button = UniTab:CreateButton({
 })
 
 local Button = UniTab:CreateButton({
-   Name = "Ui Tăng HitBox",
+   Name = "Tăng Hitbox",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
    end,
