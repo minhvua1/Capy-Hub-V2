@@ -181,3 +181,9 @@ local Button = SupportTab:CreateButton({
    end,
 })
 
+local Button = SupportTab:CreateButton({
+   Name = "Ui Bật Console",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Capy-Hub-V2/refs/heads/main/Console"))();
+   end,
+})
