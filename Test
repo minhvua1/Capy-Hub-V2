@@ -171,3 +171,13 @@ local Button = UniTab:CreateButton({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
    end,
 })
+
+--button supportab
+
+local Button = SupportTab:CreateButton({
+   Name = "Tăng FPS",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Capy-Hub-V2/refs/heads/main/Fps%20booster"))()
+   end,
+})
+
