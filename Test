@@ -188,8 +188,8 @@ local Button = SupportTab:CreateButton({
    end,
 })
 
-local Toggle = SupportTab:CreateToggle({
-   Name = "Bật/Tắt ESP",
+local Toggle = Tab:CreateToggle({
+   Name = "Bật/Tắt Esp",
    CurrentValue = false,
    Flag = "Toggle1",
    Callback = function(Value)
@@ -197,54 +197,8 @@ local Toggle = SupportTab:CreateToggle({
            local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
-local ESPEnabled = false
-
-local function CreateESP(player)
-    if player == Players.LocalPlayer then return end -- Không tạo ESP cho chính người chơi
-
-    local character = player.Character or player.CharacterAdded:Wait()
-    local highlight = Instance.new("Highlight")
-    
-    highlight.Parent = character -- Gắn vào nhân vật
-    highlight.FillTransparency = 0.8 -- Độ trong suốt của phần lấp đầy
-    highlight.OutlineTransparency = 0 -- Hiển thị viền
-    highlight.FillColor = Color3.new(0.6, 0.8, 1) -- Màu lấp đầy (Xanh dương nhạt)
-    highlight.OutlineColor = Color3.new(1, 1, 1) -- Màu viền (Trắng)
-
-    RunService.Heartbeat:Connect(function()
-        if not ESPEnabled then
-            highlight.Enabled = false -- Tắt ESP
-        else
-            highlight.Enabled = true -- Bật ESP
-        end
-    end)
-end
-
-Players.PlayerAdded:Connect(function(player)
-    player.CharacterAdded:Connect(function()
-        CreateESP(player)
-    end)
-end)
-
-for _, player in pairs(Players:GetPlayers()) do
-    if player ~= Players.LocalPlayer then
-        CreateESP(player)
-    end
-end
-
-local UserInputService = game:GetService("UserInputService")
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end -- Bỏ qua nếu đang nhập vào UI
-    if input.KeyCode == Enum.KeyCode.E then
-        ESPEnabled = not ESPEnabled
-        print("ESP Trạng thái:", ESPEnabled and "Bật" or "Tắt")
-    end
-end)
-       else
-           local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-
-local ESPEnabled = true -- Biến trạng thái bật/tắt ESP
+-- Tạo biến toàn cục để điều khiển trạng thái ESP
+_G.ESPEnabled = true -- Mặc định bật ESP
 
 -- Hàm tạo ESP Box
 local function CreateESP(player)
@@ -259,13 +213,9 @@ local function CreateESP(player)
     highlight.FillColor = Color3.new(0.6, 0.8, 1) -- Màu lấp đầy (Xanh dương nhạt)
     highlight.OutlineColor = Color3.new(1, 1, 1) -- Màu viền (Trắng)
 
-    -- Kết nối ESP với biến trạng thái
+    -- Kết nối ESP với biến trạng thái toàn cục
     RunService.Heartbeat:Connect(function()
-        if not ESPEnabled then
-            highlight.Enabled = false -- Tắt ESP
-        else
-            highlight.Enabled = true -- Bật ESP
-        end
+        highlight.Enabled = _G.ESPEnabled -- Bật/Tắt dựa trên _G.ESPEnabled
     end)
 end
 
@@ -281,17 +231,9 @@ for _, player in pairs(Players:GetPlayers()) do
     if player ~= Players.LocalPlayer then
         CreateESP(player)
     end
-end
-
--- Tắt/Bật ESP bằng phím `E`
-local UserInputService = game:GetService("UserInputService")
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if gameProcessed then return end -- Bỏ qua nếu đang nhập vào UI
-    if input.KeyCode == Enum.KeyCode.E then
-        ESPEnabled = not ESPEnabled
-        print("ESP Trạng thái:", ESPEnabled and "Bật" or "Tắt")
-    end
 end)
+       else
+           _G.ESPEnabled = false
        end
    end,
 })
