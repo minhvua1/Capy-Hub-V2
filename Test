@@ -188,7 +188,7 @@ local Button = SupportTab:CreateButton({
    end,
 })
 
-local Toggle = Tab:CreateToggle({
+local Toggle = SupportTab:CreateToggle({
    Name = "Bật/Tắt Esp",
    CurrentValue = false,
    Flag = "Toggle1",
