@@ -189,7 +189,7 @@ local Button = SupportTab:CreateButton({
 })
 
 local Toggle = SupportTab:CreateToggle({
-   Name = "Bật/Tắt Esp",
+   Name = "Bật/Tắt Esp ( Dùng Trong Server Đông Người Sẽ Bị Giảm Fps)",
    CurrentValue = false,
    Flag = "Toggle2",
    Callback = function(Value)
