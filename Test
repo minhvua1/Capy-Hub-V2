@@ -191,11 +191,11 @@ local Button = SupportTab:CreateButton({
 local Toggle = SupportTab:CreateToggle({
    Name = "Bật/Tắt Esp",
    CurrentValue = false,
-   Flag = "Toggle1",
+   Flag = "Toggle2",
    Callback = function(Value)
        if Value then
            _G.ESPEnabled = true
-           loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/PLAYER%20INFO"))()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/ESP"))()
        else
            _G.ESPEnabled = false
        end
