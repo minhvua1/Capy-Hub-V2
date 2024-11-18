@@ -237,3 +237,17 @@ end
        end
    end,
 })
+
+local Toggle = SupportTab:CreateToggle({
+   Name = "Bật/Tắt Thông Tin Người Chơi",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+       if Value then
+           _G.ShowPlayerInfo = true
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/PLAYER%20INFO"))()
+       else
+           _G.ShowPlayerInfo = false
+       end
+   end,
+})
