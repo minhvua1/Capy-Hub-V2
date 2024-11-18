@@ -215,3 +215,19 @@ local Toggle = SupportTab:CreateToggle({
        end
    end,
 })
+
+local SupportSection = SupportTab:CreateSection("Server")
+
+local Button = SupportTab:CreateButton({
+   Name = "Rejoin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/Rejoin"))()
+   end,
+})
+
+local Button = SupportTab:CreateButton({
+   Name = "Server Hop",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/Server%20Hop"))()
+   end,
+})
