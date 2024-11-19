@@ -42,6 +42,9 @@ local UniSection = UniTab:CreateSection("Slider")
 local SupportTab = Window:CreateTab("Hỗ Trợ", 4483362458) -- Title, Image
 local SupportSection = SupportTab:CreateSection("Tăng Hiệu Năng")
 
+local VuiTab = Window:CreateTab("Vui", 4483362458) -- Title, Image
+local VuiSection = VuiTab:CreateSection("Nữa Sẽ Có 🫸🔴🔵🫷🫴🟣")
+
 --Notifications
 
 Rayfield:Notify({
