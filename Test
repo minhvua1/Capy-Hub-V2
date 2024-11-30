@@ -197,11 +197,12 @@ local Toggle = SupportTab:CreateToggle({
    Flag = "Toggle1",
    Callback = function(Value)
        if Value then
-           _G.ShowPingFps = true
+           _G.ShowPingFPS = false
+
            loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/show%20pingfps"))()  
            
        else
-           _G.ShowPingFps = false
+           _G.ShowPingFPS = false
        end
    end,
 })
