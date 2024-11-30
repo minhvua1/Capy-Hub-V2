@@ -6,7 +6,7 @@ local Window = Rayfield:CreateWindow({
    Name = "Capy Hub V2",
    LoadingTitle = "Loading Capy Hub V2",
    LoadingSubtitle = "by Capy",
-   Theme = "AmberGlow", -- DarkBlue, Green, Light, Default - more coming soon!
+   Theme = "Amethyst", -- DarkBlue, Green, Light, Default - more coming soon!
 
    DisableRayfieldPrompts = false,
 
