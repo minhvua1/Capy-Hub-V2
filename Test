@@ -192,6 +192,21 @@ local Button = SupportTab:CreateButton({
 })
 
 local Toggle = SupportTab:CreateToggle({
+   Name = "Bật/Tắt Hiện Fps Và Ping",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+       if Value then
+           _G.ShowPingFps = true
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/minhvua1/Scripts/refs/heads/main/show%20pingfps"))()  
+           
+       else
+           _G.ShowPingFps = false
+       end
+   end,
+})
+
+local Toggle = SupportTab:CreateToggle({
    Name = "Bật/Tắt Esp ( Dùng Trong Server Đông Người Sẽ Bị Giảm Fps)",
    CurrentValue = false,
    Flag = "Toggle2",
