@@ -1,4 +1,4 @@
-Lgame.StarterGui:SetCore("SendNotification", {
+game.StarterGui:SetCore("SendNotification", {
     Title = "Capy Hub",
     Text = "Hello",
     Icon = "rbxassetid://86903290506193",
