@@ -72,6 +72,64 @@ Rayfield:Notify({
 },
 })
 
+--buttons settingtab
+
+local Button = SettingTab:CreateButton({
+   Name = "Bình Thường",
+   Callback = function()
+   Window.ModifyTheme('Default')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Ánh Sáng Hổ Phách",
+   Callback = function()
+   Window.ModifyTheme('AmberGlow')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Thạch Anh Tím",
+   Callback = function()
+   Window.ModifyTheme('Amethyst')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Xanh Lá",
+   Callback = function()
+   Window.ModifyTheme('Green')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Hoa",
+   Callback = function()
+   Window.ModifyTheme('Bloom')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Sáng (ko nên bật trong không gian tối)",
+   Callback = function()
+   Window.ModifyTheme('Light')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Biển",
+   Callback = function()
+   Window.ModifyTheme('Ocean')
+   end,
+})
+
+local Button = SettingTab:CreateButton({
+   Name = "Sự thanh thản",
+   Callback = function()
+   Window.ModifyTheme('Serenity')
+   end,
+})
+
 --buttons unitab
 
 --slider
