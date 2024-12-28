@@ -1,7 +1,7 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Capy Hub",
+    Title = "Từ Capy Hub",
     Text = "Hello",
-    Icon = "rbxassetid://86903290506193",
+    Icon = "rbxassetid://869032905061",
     Duration = 10
 })
 
@@ -43,14 +43,15 @@ local Window = Rayfield:CreateWindow({
 
 --tabs and sections
 
+local SettingTab = Window:CreateTab("Cài Đặt", 4483362458) -- Title, Image
+local SettingSection = SettingTab:CreateSection("Đổi Màu Cho Capy Hub")
+
+
 local UniTab = Window:CreateTab("Universal", 4483362458) -- Title, Image
 local UniSection = UniTab:CreateSection("Slider")
 
 local SupportTab = Window:CreateTab("Hỗ Trợ", 4483362458) -- Title, Image
 local SupportSection = SupportTab:CreateSection("Tăng Hiệu Năng")
-
-local VuiTab = Window:CreateTab("Vui", 4483362458) -- Title, Image
-local VuiSection = VuiTab:CreateSection("Nữa Sẽ Có 🫸🔴🔵🫷🫴🟣")
 
 --Notifications
 
