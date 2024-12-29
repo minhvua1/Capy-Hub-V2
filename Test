@@ -1,36 +1,32 @@
+-- notification
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "Từ Capy Hub",
-    Text = "Muốn Bật Chống Kick Khi Afk Ko?",
+    Text = "Bạn có muốn bật Anti AFK?",
     Icon = "rbxassetid://869032905061",
     Duration = 10,
-    Button1 = "Có",
-    Button2 = "Ko"
-})
+    Button1 = "Yes",
+    Button2 = "No",
+    Callback = function(button)
+        if button == "Yes" then
+            -- Bật Anti AFK
+            local vu = game:GetService("VirtualUser")
+            game:GetService("Players").LocalPlayer.Idled:Connect(function()
+                vu:CaptureController()
+                vu:ClickButton2(Vector2.new(0, 0))
+            end)
 
-local function onButtonPressed(button)
-    if button == "Có" then
-        -- Anti-AFK Script
-local vu = game:GetService("VirtualUser")
-
-game.Players.LocalPlayer.Idled:Connect(function()
-    vu:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
-    task.wait(1)
-    vu:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
-end)
-
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Từ Capy Hub",
-    Text = "Bật Rồi Đó, Giờ Thì Treo Máy Đi",
-    Icon = "rbxassetid://869032905061",
-    Duration = 10,
-    Button1 = "Oke",
-
-print("Đã Kích Hoạt Anti Afk")
-
-    elseif button == "Ko" then
-        print("Chuẩn Bị Bị Ban Đi")
+            -- Thông báo đã bật Anti AFK
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Từ Capy Hub",
+                Text = "Đã bật Anti AFK!",
+                Duration = 5,
+                Button1 = "Ok"
+            })
+        elseif button == "No" then
+            print("Người chơi đã từ chối bật Anti AFK.")
+        end
     end
-end
 })
 
 
