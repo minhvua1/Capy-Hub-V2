@@ -1,9 +1,40 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Từ Capy Hub",
+    Text = "Muốn Bật Chống Kick Khi Afk Ko?",
+    Icon = "rbxassetid://869032905061",
+    Duration = 10,
+    Button1 = "Có",
+    Button2 = "Ko"
+})
+
+local function onButtonPressed(button)
+    if button == "Yes" then
+        -- Anti-AFK Script
+local vu = game:GetService("VirtualUser")
+
+game.Players.LocalPlayer.Idled:Connect(function()
+    vu:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+    task.wait(1)
+    vu:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+end)
+
+print("Đã Kích Hoạt Anti Afk")
+
+    elseif button == "Ko" then
+        print("Ready To Get Banned?")
+    end
+end
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Từ Capy Hub",
     Text = "Hello",
     Icon = "rbxassetid://869032905061",
-    Duration = 10
+    Duration = 10,
+    Button1 = "Yes",
+    Button2 = "No",
+    Callback = onButtonPressed
 })
+
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
