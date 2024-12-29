@@ -8,14 +8,18 @@ game.StarterGui:SetCore("SendNotification", {
     Button1 = "Yes",
     Button2 = "No",
     Callback = function(button)
-        print("Kiểm Tra Thành Công")  -- Thêm dòng này để kiểm tra
         if button == "Yes" then
+            print("Anti AFK đã được bật!")
+
             -- Bật Anti AFK
             local vu = game:GetService("VirtualUser")
             game:GetService("Players").LocalPlayer.Idled:Connect(function()
                 vu:CaptureController()
                 vu:ClickButton2(Vector2.new(0, 0))
             end)
+
+            -- Đợi một chút để chắc chắn Anti AFK đã được kích hoạt
+            task.wait(1)
 
             -- Thông báo đã bật Anti AFK
             game.StarterGui:SetCore("SendNotification", {
@@ -29,6 +33,7 @@ game.StarterGui:SetCore("SendNotification", {
         end
     end
 })
+
 
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
