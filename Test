@@ -9,25 +9,29 @@ game.StarterGui:SetCore("SendNotification", {
     Button2 = "No",
     Callback = function(button)
         if button == "Yes" then
-            print("Anti AFK đã được bật!")
+            print("Đang bật Anti AFK...")
 
-            -- Bật Anti AFK
-            local vu = game:GetService("VirtualUser")
-            game:GetService("Players").LocalPlayer.Idled:Connect(function()
-                vu:CaptureController()
-                vu:ClickButton2(Vector2.new(0, 0))
+            -- Bật Anti AFK trong một luồng riêng biệt
+            task.spawn(function()
+                local vu = game:GetService("VirtualUser")
+                local player = game:GetService("Players").LocalPlayer
+                player.Idled:Connect(function()
+                    vu:CaptureController()
+                    vu:ClickButton2(Vector2.new(0, 0))
+                    print("Anti AFK đã được kích hoạt!")
+                end)
+
+                -- Đảm bảo Anti AFK đã được kích hoạt trước khi gửi thông báo
+                task.wait(1)  -- Đợi một chút để chắc chắn Anti AFK đã hoạt động
+
+                -- Thông báo đã bật Anti AFK
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "Từ Capy Hub",
+                    Text = "Đã bật Anti AFK!",
+                    Duration = 5,
+                    Button1 = "Ok"
+                })
             end)
-
-            -- Đợi một chút để chắc chắn Anti AFK đã được kích hoạt
-            task.wait(1)
-
-            -- Thông báo đã bật Anti AFK
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "Từ Capy Hub",
-                Text = "Đã bật Anti AFK!",
-                Duration = 5,
-                Button1 = "Ok"
-            })
         elseif button == "No" then
             print("Người chơi đã từ chối bật Anti AFK.")
         end
