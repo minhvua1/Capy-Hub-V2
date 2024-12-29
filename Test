@@ -8,7 +8,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 
 local function onButtonPressed(button)
-    if button == "Yes" then
+    if button == "Có" then
         -- Anti-AFK Script
 local vu = game:GetService("VirtualUser")
 
@@ -18,21 +18,19 @@ game.Players.LocalPlayer.Idled:Connect(function()
     vu:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
 end)
 
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "Từ Capy Hub",
+    Text = "Bật Rồi Đó, Giờ Thì Treo Máy Đi",
+    Icon = "rbxassetid://869032905061",
+    Duration = 10,
+    Button1 = "Oke",
+
 print("Đã Kích Hoạt Anti Afk")
 
     elseif button == "Ko" then
-        print("Ready To Get Banned?")
+        print("Chuẩn Bị Bị Ban Đi")
     end
 end
-
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Từ Capy Hub",
-    Text = "Hello",
-    Icon = "rbxassetid://869032905061",
-    Duration = 10,
-    Button1 = "Yes",
-    Button2 = "No",
-    Callback = onButtonPressed
 })
 
 
