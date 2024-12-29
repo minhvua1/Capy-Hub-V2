@@ -8,21 +8,14 @@ game.StarterGui:SetCore("SendNotification", {
     Button1 = "Yes",
     Button2 = "No",
     Callback = function(button)
+        print("Kiểm Tra Thành Công")  -- Thêm dòng này để kiểm tra
         if button == "Yes" then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "Từ Capy Hub",
-                Text = "Đã bật Anti AFK!",
-                Duration = 5,
-                Button1 = "Ok"
-            })
-
             -- Bật Anti AFK
             local vu = game:GetService("VirtualUser")
             game:GetService("Players").LocalPlayer.Idled:Connect(function()
                 vu:CaptureController()
                 vu:ClickButton2(Vector2.new(0, 0))
             end)
-            print("đã bật anti afk")
 
             -- Thông báo đã bật Anti AFK
             game.StarterGui:SetCore("SendNotification", {
