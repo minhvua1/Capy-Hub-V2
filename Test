@@ -2,7 +2,7 @@
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "Từ Capy Hub",
-    Text = "Bạn có muốn bật Anti AFK?",
+    Text = "Bạn có muốn sang server ít người ko?",
     Icon = "rbxassetid://869032905061",
     Duration = 10,
     Button1 = "Yes",
@@ -10,28 +10,24 @@ game.StarterGui:SetCore("SendNotification", {
     Callback = function(button)
         if button == "Yes" then
             print("Đang bật Anti AFK...")
-
-            -- Bật Anti AFK trong một luồng riêng biệt
-            task.spawn(function()
-                local vu = game:GetService("VirtualUser")
-                local player = game:GetService("Players").LocalPlayer
-                player.Idled:Connect(function()
-                    vu:CaptureController()
-                    vu:ClickButton2(Vector2.new(0, 0))
-                    print("Anti AFK đã được kích hoạt!")
-                end)
-
-                -- Đảm bảo Anti AFK đã được kích hoạt trước khi gửi thông báo
-                task.wait(1)  -- Đợi một chút để chắc chắn Anti AFK đã hoạt động
-
-                -- Thông báo đã bật Anti AFK
-                game.StarterGui:SetCore("SendNotification", {
-                    Title = "Từ Capy Hub",
-                    Text = "Đã bật Anti AFK!",
-                    Duration = 5,
-                    Button1 = "Ok"
-                })
-            end)
+local Http = game:GetService("HttpService")
+local TPS = game:GetService("TeleportService")
+local Api = "https://games.roblox.com/v1/games/"
+ 
+local _place = game.PlaceId
+local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+function ListServers(cursor)
+   local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+   return Http:JSONDecode(Raw)
+end
+ 
+local Server, Next; repeat
+   local Servers = ListServers(Next)
+   Server = Servers.data[1]
+   Next = Servers.nextPageCursor
+until Server
+ 
+TPS:TeleportToPlaceInstance(_place,Server.id,game:GetService('Players').LocalPlayer)
         elseif button == "No" then
             print("Người chơi đã từ chối bật Anti AFK.")
         end
